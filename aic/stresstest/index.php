@@ -14,6 +14,7 @@
         <?php
             printHeader();
         ?>
+        <h1>HI</h1>
         <form action="https://atdpsites.berkeley.edu/test.php">
             <div class="name-div">
                 <label for="name">Name: </label>
