@@ -1,0 +1,16 @@
+body{
+    text-align: center;
+    background-color: lightblue;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;;
+}
+div{
+    padding: 1%;
+    font-size: large;
+}
+.header{
+    padding-top: 0%;
+    font-size: x-large;
+}
+#submit-button{
+    font-size: 200%; 
+}
