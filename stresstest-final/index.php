@@ -1,3 +1,6 @@
+<?php
+require_once "header.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,21 +9,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boba Test</title>
     <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="test.css"> -->
+    <link rel="icon" href="../stresstest-images/atdp.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="main.js"></script>
+
 </head>
 
 <body>
+    <?php printImage(); ?>
     <div class="container">
-        <?php
 
-        ?>
-        <!-- https://atdpsites.berkeley.edu/test.php -->
-        <div class='header'>
-            <h1>Welcome to my Boba Test</h1>
-            <h2>Created by Stanley Ho</h2>
-        </div>
-
+        <?php printHeader(); ?>
 
         <form action="action.php" method="post">
             <div class="info-div">
@@ -37,6 +36,7 @@
                 <div class="gender-div questions-div">
                     <label for="gender">Gender:</label>
                     <select id="gender" name="gender-val">
+                        <option disabled selected>Select an option</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         <option value="other">Other</option>
@@ -50,10 +50,28 @@
                     <label for="street">Street Address:</label>
                     <input type="text" id="street" name="street-val" placeholder="16 Apple Street" required>
                 </div>
+                <div class="city-div questions-div">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city-val" placeholder="New York City" required>
+                </div>
+                <div class="error-div">
+
+                    <p class="error" id="name-error">Invalid Name</p>
+                    <p class="error" id="date-error">Invalid Date</p>
+                    <p class="error" id="email-error">Invalid Email</p>
+                    <p class="error" id="street-error">Invalid Street</p>
+                    <p class="error" id="city-error">Invalid City</p>
+                    <p class="error" id="gender-error">Please Select a Gender</p>
+
+                </div>
+
+                <div class="next-div">
+                    <button id="next-button">Next</button>
+                </div>
             </div>
 
             <div class="questions-div-div">
-                <!-- | QUESTIONS | -->
+
                 <div class="questions-div" id="q1-div">
                     <h3 class="qh" id="q1h">1. What is your favorite topping in your drink</h3>
                     <div class="opt-div">
@@ -209,40 +227,16 @@
                         <label for="q10-everyday">Everyday</label>
                     </div>
                 </div>
-            </div>
-            <!-- 
-                questions:
-                1.what is your favorite topping do you like
-                    boba, lychee, NO TOPPINGS, any toppings are fine for me.
-                2.on a hot day, what fruit do you want to eat the most
-                    mangoes, strawberries, peaches, tropical fruit(passion, orange, grapefruit), I hate fruit
-                3.rank your sweet tooth 1-100 (1 being i hate sweets, 100 being you always want to eat candy)
-                    input a num
-                4.rank how much you care about your health 1-100 (1 being you don't care if it kills you, 100 beign your a health-freak)
-                    input a num
-                5. Check off what you can't have
-                    caffeine, milk, overly-sugar
-                6. Would you rather go the Popular route or be the special person
-                    Popular or special
-                7. How much do you expect your drink to be
-                    money is not a factor, Around 6$, Around 8$, 
-                8. Are you willing to try new things 
-                    yes or no
-                9. When you drink boba, what do you expect the drink to be
-                    refreshing, sweet and tasty, i'm only here for the boba
-                10. How many times are you drinken boba
-                    first time (that's why im taking this quiz), i drink it occaisanly, everyday
 
-
-             -->
-            <div class="submit-div">
-                <button id="submit-button" type="submit">Submit</button>
+                <div class="submit-div">
+                    <button id="submit-button" type="submit">Submit</button>
+                </div>
             </div>
 
         </form>
+        <h4 class="res-p"><a href="action.php?random=true">Frick it, give me a random drink</a></h4>
 
-
-        <p><a href="https://atdpsites.berkeley.edu/validate/">HTML5</a></p>
+        <p class="res-p"><a href="https://atdpsites.berkeley.edu/validate/">HTML5</a></p>
     </div>
 
 </body>
